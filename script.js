@@ -1,12 +1,22 @@
 // add variables here
-
+let price;
+let drink;
 
 function checkout(choice) {
   document.querySelector("#checkout").classList.remove("hidden");
   document.querySelector("#checkout-img").src = `${choice}.jpg`; //look for other concatenation
 
   // add the conditional below
-  
+  if (choice === "latte"){
+  drink ="Latte";
+  price = 4.29;
+  } else if (choice ==="cappuccino") {
+   drink ="Cappuccino";
+   price = 4.79; 
+  } else if (choice === "iced-coffee"){
+  drink ="Iced Coffee";
+  price = 3.79;
+  }
 
   document.querySelector("#selected-drink").innerText = drink;
   document.querySelector("#price").innerText = "$" + price.toFixed(2);
@@ -19,7 +29,7 @@ function receipt() {
   let quantity = parseInt(document.querySelector("#quantity1").value);
 
   // add total calculation below!
-  
+  let total = price * quantity;
 
   document.querySelector("#drink").innerText = drink;
   document.querySelector("#total").innerText = "$" + total.toFixed(2);
